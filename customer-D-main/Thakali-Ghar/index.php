@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- boostrap-link -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -11,25 +11,27 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-     <!-- boostrap-link -->
-
-     <!-- fonts-link -->
+    <!-- boostrap-link -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- fonts-link -->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-<!-- fonts-link -->
+    <!-- fonts-link -->
 
-<!-- link-css -->
+    <!-- link-css -->
     <link rel="stylesheet" href="styles.css" />
     <!-- link-css -->
-
 
     <title>Thakali House</title>
   </head>
   <body>
-    <!-- navigation menu start-->
+ 
+  
 
+
+    <!-- navigation menu start-->
     <header class="header">
       <nav>
         <div class="nav__header">
@@ -197,7 +199,7 @@
                   />
                 </div>
 
-                <div class="text-center my-4">
+                <div class="text-center my-4" id="bookingForm">
                   <button
                     type="submit"
                     name="save_data"
@@ -210,7 +212,7 @@
                 <div class="text-center status my-2">
                   <p>
                     Check Booking
-                    <a href="check.html" class="text-warning">Status</a>
+                    <a href="check.php" class="text-warning">Status</a>
                   </p>
                   <p>
                     Admin Panel
@@ -452,7 +454,9 @@
               name="message"
               placeholder="Type your message here"
               rows="3"
+              required
             ></textarea>
+            <div class="invalid-feedback">Please enter a message.</div>
           </div>
           <div class="my-4">
             <button type="submit" class="btn btn-outline-warning">
@@ -517,5 +521,21 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
     <!-- javascript link -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <?php
+  if(isset($_SESSION['status']) && $_SESSION['status'] == "Data inserted successfully") {
+    echo '<script>
+            Swal.fire({
+              title: "Success",
+              text: "Data inserted successfully",
+              icon: "success",
+              confirmButtonText: "Ok"
+            });
+          </script>';
+    unset($_SESSION['status']); // Clear the session variable
+  }
+  ?>
   </body>
 </html>

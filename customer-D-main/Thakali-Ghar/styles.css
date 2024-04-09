@@ -659,6 +659,8 @@ nav {
 
 
 
+
+
   
 /* For iPhone */
 @media only screen and (max-width: 767px) {
@@ -672,6 +674,11 @@ nav {
     position: relative;
     left: 1.8rem;
    }
+
+  
+
+
+
 } 
 
 /* For iPad */
@@ -681,11 +688,37 @@ nav {
   .container.image .row .col-12 { 
      margin-bottom: 20px; 
    }
+  
+  
+  
 }
 
 /* For tablet */
 .btn-close{
   position: relative;
-  left: 26rem;
+  left: 20rem;
   top: 0.7rem;
 }
+
+
+
+/* Adjust close button position for mobile devices */
+/* Adjust close button position for mobile devices */
+@media (max-width: 576px) {
+  .btn-close {
+    position: absolute;
+    right: -50px;
+    top: 10px;
+  }
+}
+
+/* For iPhone */
+@media only screen and (max-width: 767px) {
+  .btn-close {
+    right: 12px;
+    top: 12px;
+  }
+}
+
+
+

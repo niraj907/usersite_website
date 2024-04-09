@@ -83,3 +83,16 @@ form.addEventListener('submit', function(e) {
         }, 3000);
     });
 });
+
+
+// table booking
+
+// $(document).ready(function () {
+//   $('#bookingForm').submit(function (event) {
+//       event.preventDefault(); // Prevent the form from submitting normally
+//       // Show success message
+//       alert("Booking Successful!");
+//       // Optionally, you can redirect the user to another page after showing the message
+//       // window.location.href = "success.html";
+//   });
+// });
